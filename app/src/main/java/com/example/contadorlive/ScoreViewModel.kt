@@ -1,28 +1,55 @@
-package ccom.example.contadorlive
+package com.example.contadorlive
 
-import androidx.databinding.BaseObservable
-import androidx.databinding.Bindable
-import java.util.*
+import android.util.Log
+import android.view.View
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 
 
-class ScoreViewModel: BaseObservable() {
-    var scoreTeamB: String = "0"
-    var scoreTeamA: String = "0"
-    @Bindable
-    fun getScoreTeamB(): String {
-        return scoreTeamB
+class ScoreViewModel: ViewModel() {
+    private val _scoreTeamA= MutableLiveData<Int>()
+    val scoreTeamA :LiveData<Int>
+        get() = _scoreTeamA
+
+
+    init {
+        _scoreTeamA.value=0
+    }
+    var scoreTeamB:Int=0
+
+    fun addOneTeamA() {
+        _scoreTeamA.value = _scoreTeamA.value?.plus(1)
+
+
+        Log.d("hey:", scoreTeamA.value.toString())
     }
 
-    fun setScoreTeamB(value: String) {
-        // Avoids infinite loops.
-        if (scoreTeamB != value) {
-            scoreTeamB = value
+    fun addOneTeamB() {
+        _scoreTeamA.value = _scoreTeamA.value?.plus(1)
 
-            // React to the change
-
-            // Notify observers of a new value.
-            notifyPropertyChanged(BR.score)
-        }
     }
 
+    fun addTwoTeamA() {
+        _scoreTeamA.value = _scoreTeamA.value?.plus(2)
+    }
+
+    fun addTwoTeamB() {
+        _scoreTeamA.value = _scoreTeamA.value?.plus(2)
+    }
+
+    fun addThreeTeamA() {
+        _scoreTeamA.value = _scoreTeamA.value?.plus(3)
+    }
+
+    fun addThreeTeamB() {
+        _scoreTeamA.value = _scoreTeamA.value?.plus(3)
+    }
+
+    fun resetScores() {
+        _scoreTeamA.value = 0
+        scoreTeamB=0
+
+
+    }
 }

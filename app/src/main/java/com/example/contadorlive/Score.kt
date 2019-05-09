@@ -1,4 +1,4 @@
-package ccom.example.contadorlive
+package com.example.contadorlive
 
 class Score{
     var scoreTeamB: Int = 0

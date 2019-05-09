@@ -7,19 +7,25 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
-import com.aldana.ejemplo14.databinding.ActivityMainBinding
+import com.example.contadorlive.ScoreViewModel
+import com.example.contadorlive.databinding.ActivityMainBinding
+
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private var scoreViewModel = ScoreViewModel()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = ActivityMainBinding.inflate(layoutInflater)
-        binding.score = scoreViewModel
-        binding.lifecycleOwner = this
-        setContentView(binding.root)
+        setContentView(R.layout.activity_main)
+         val scoreViewModel =ViewModelProviders.of(this)
+                .get(ScoreViewModel::class.java)
 
+        DataBindingUtil.setContentView<ActivityMainBinding>(
+                this,R.layout.activity_main
+        ).apply {
+            this.setLifecycleOwner (this@MainActivity)
+            this.score = scoreViewModel
+        }
 
         /* scoreViewModel = ViewModelProviders.of(this).get(ScoreViewModel::class.java)
 
@@ -41,43 +47,7 @@ class MainActivity : AppCompatActivity() {
 
     // TODO: Accediendo y modificando datos almacenados en el ViewModel según el método utilizado
 
-    fun addOneTeamA(v: View) {
-        val s = scoreViewModel.scoreTeamA.toInt() + 1
-        scoreViewModel.scoreTeamA = s.toString()
-        Log.d("hey:",scoreViewModel.scoreTeamA)
-    }
-
-    fun addOneTeamB(v: View) {
-        val s = scoreViewModel.scoreTeamB.toInt() + 1
-        scoreViewModel.scoreTeamB = s.toString()
-    }
-
-    fun addTwoTeamA(v: View) {
-        val s = scoreViewModel.scoreTeamA.toInt() + 2
-        scoreViewModel.scoreTeamA = s.toString()
-    }
-
-    fun addTwoTeamB(v: View) {
-        val s = scoreViewModel.scoreTeamB.toInt() + 2
-        scoreViewModel.scoreTeamB = s.toString()
-    }
-
-    fun addThreeTeamA(v: View) {
-        val s = scoreViewModel.scoreTeamA.toInt() + 3
-        scoreViewModel.scoreTeamA = s.toString()
-    }
-
-    fun addThreeTeamB(v: View) {
-        val s = scoreViewModel.scoreTeamB.toInt() + 3
-        scoreViewModel.scoreTeamB = s.toString()
-    }
-
-    fun resetScores(v: View) {
-        scoreViewModel.scoreTeamA = "0"
-        scoreViewModel.scoreTeamB = "0"
-
-
-    } // TODO: Limpiando datos
+     // TODO: Limpiando datos
 
     fun displayScore(v: TextView, score: Int) {
         v.text = score.toString()
