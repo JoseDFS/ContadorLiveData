@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.contadorlive.ScoreViewModel
 import com.example.contadorlive.databinding.ActivityMainBinding
 
+
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -38,18 +39,11 @@ class MainActivity : AppCompatActivity() {
              scoreViewModel.scoreTeamB
          )
  */
-        // TODO: El ViewModel es restaurado si ya existía, si no, se crea uno nuevo.
-        // TODO: Recuerde que el ViewModel solo sobrevive a cambios de configuración y no a la destrucción de la aplicación
+
 
     }
 
 
-    // TODO: Accediendo y modificando datos almacenados en el ViewModel según el método utilizado
 
-     // TODO: Limpiando datos
-
-    fun displayScore(v: TextView, score: Int) {
-        v.text = score.toString()
-    }
 
 }
