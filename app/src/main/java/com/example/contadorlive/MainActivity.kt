@@ -16,14 +16,13 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-         val scoreViewModel =ViewModelProviders.of(this)
+         val scoreViewModel=ViewModelProviders.of(this)
                 .get(ScoreViewModel::class.java)
 
         DataBindingUtil.setContentView<ActivityMainBinding>(
                 this,R.layout.activity_main
         ).apply {
-            this.setLifecycleOwner (this@MainActivity)
+            this.setLifecycleOwner(this@MainActivity)
             this.score = scoreViewModel
         }
 
