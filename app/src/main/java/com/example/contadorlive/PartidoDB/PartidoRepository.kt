@@ -1,4 +1,4 @@
-package com.example.contadorlive
+package com.example.contadorlive.PartidoDB
 
 import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData

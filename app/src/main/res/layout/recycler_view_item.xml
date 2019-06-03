@@ -5,23 +5,23 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-style="@android:style/Holo.SegmentedButton">
+        style="@android:style/Holo.SegmentedButton" android:layout_marginBottom="10dp">
 
   <TextView
           android:id="@+id/tv_teams_vs"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          tools:text="@tools:sample/full_names"
-          android:textSize="20sp"
+          android:layout_width="212dp"
+          android:layout_height="46dp"
+          tools:text=" ds  dsd sad sadasdas dsadad asdadad "
+          android:textSize="16sp"
           android:textColor="@android:color/black"
-          android:layout_marginBottom="8dp"
           app:layout_constraintBottom_toTopOf="@+id/tv_fecha"
-          app:layout_constraintStart_toStartOf="@+id/tv_fecha"/>
+          app:layout_constraintStart_toStartOf="@+id/tv_fecha"
+  />
 
   <TextView
           android:id="@+id/tv_fecha"
-          android:layout_width="285dp"
-          android:layout_height="20dp"
+          android:layout_width="214dp"
+          android:layout_height="18dp"
           tools:text="@tools:sample/lorem[4:10]"
           app:layout_constraintEnd_toEndOf="parent"
           android:layout_marginEnd="8dp"
@@ -32,10 +32,11 @@ style="@android:style/Holo.SegmentedButton">
 
   <TextView
           android:id="@+id/tv_id_partido"
-          android:layout_width="118dp"
-          android:layout_height="47dp"
+          android:layout_width="113dp"
+          android:layout_height="60dp"
           tools:text="@tools:sample/date/hhmm"
           app:layout_constraintEnd_toEndOf="parent"
-          android:layout_marginEnd="8dp" android:layout_marginRight="8dp" android:layout_marginTop="8dp"
-          app:layout_constraintTop_toTopOf="parent" android:textSize="18sp"/>
+          android:layout_marginTop="4dp"
+          app:layout_constraintTop_toTopOf="parent" android:textSize="18sp" android:layout_marginEnd="4dp"
+          android:layout_marginRight="4dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

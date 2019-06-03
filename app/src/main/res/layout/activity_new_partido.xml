@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.contadorlive.NewPartidoActivity">
+    tools:context="com.example.contadorlive.Activities.NewPartidoActivity">
 
     <data>
 
@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            tools:context=".MainActivity">
+            tools:context=".Activities.MainActivity">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -176,6 +176,7 @@
         <Button android:id="@+id/bt_fecha" android:layout_width="wrap_content" android:layout_height="50dp"
         android:text=" Elegir Fecha"
                 style="@style/Widget.AppCompat.Button"
+                android:layout_marginRight="30dp"
         />
     </LinearLayout>
 
@@ -193,6 +194,7 @@
             <Button android:id="@+id/bt_hora" android:layout_width="wrap_content" android:layout_height="50dp"
                     android:text=" Elegir Hora"
                     style="@style/Widget.AppCompat.Button"
+                    android:layout_marginRight="30dp"
             />
         </LinearLayout>
             <LinearLayout
@@ -202,7 +204,6 @@
 
                 <Button
                         android:id="@+id/bt_reset"
-                        style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
                         android:layout_width="138dp"
                         android:layout_height="53dp"
                         android:layout_gravity="center"
@@ -212,7 +213,8 @@
                         android:background="#FDD835"
                         android:onClick="@{() -> score.resetScores()}"
                         android:text="@string/action_reset"
-                        android:textSize="20sp"/>
+                        android:textSize="20sp"
+                        style="@android:style/Widget.Button"/>
 
                 <Button
                         android:id="@+id/bt_guardar"

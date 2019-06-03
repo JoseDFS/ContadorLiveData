@@ -1,7 +1,8 @@
-package com.example.contadorlive
+package com.example.contadorlive.Activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.contadorlive.R
 import kotlinx.android.synthetic.main.activity_partido.*
 
 class PartidoActivity : AppCompatActivity() {
@@ -19,8 +20,8 @@ class PartidoActivity : AppCompatActivity() {
             tv_hora.text =tv_hora.text.toString() + mIntent.getStringExtra("HORA")
             tv_scoreA.text = mIntent.getStringExtra("PuntosA")
             tv_scoreB.text = mIntent.getStringExtra("PuntosB")
-            tv_teamA.text =mIntent.getStringExtra("A")
-            tv_teamB.text =mIntent.getStringExtra("B")
+            tv_teamA.text =mIntent.getStringExtra("A")+ ":"
+            tv_teamB.text =mIntent.getStringExtra("B")+ ":"
             tv_winner.text =tv_winner.text.toString() + " " + mIntent.getStringExtra("GANADOR")
 
         }

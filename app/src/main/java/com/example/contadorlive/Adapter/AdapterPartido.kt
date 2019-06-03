@@ -1,4 +1,4 @@
-package com.example.contadorlive
+package com.example.contadorlive.Adapter
 
 import android.util.Log
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.contadorlive.PartidoDB.PartidoEntity
+import com.example.contadorlive.R
 import kotlinx.android.synthetic.main.recycler_view_item.view.*
 
 

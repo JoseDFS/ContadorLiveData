@@ -14,10 +14,4 @@
             android:background="#00DD7777"
             tools:itemCount="10"
             tools:listitem="@layout/recycler_view_item"/>
-    <FrameLayout
-            android:id="@+id/fragment_content"
-            android:layout_width="0dp"
-            android:layout_weight="2"
-            android:layout_height="match_parent"
-    ></FrameLayout>
 </LinearLayout>

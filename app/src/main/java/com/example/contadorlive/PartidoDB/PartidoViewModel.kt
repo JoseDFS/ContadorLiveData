@@ -1,12 +1,10 @@
-package com.example.contadorlive
+package com.example.contadorlive.PartidoDB
 
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
-import com.example.contadorlive.PartidoDB.PartidoEntity
-import com.example.contadorlive.PartidoDB.PartidoRoomDB
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

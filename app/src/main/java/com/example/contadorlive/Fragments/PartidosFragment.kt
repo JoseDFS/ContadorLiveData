@@ -1,21 +1,19 @@
-package com.example.contadorlive
+package com.example.contadorlive.Fragments
 
 import android.content.Context
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.Nullable
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.example.contadorlive.Adapter.AdapterPartido
 import com.example.contadorlive.PartidoDB.PartidoEntity
-import kotlinx.android.synthetic.main.activity_guardados.*
+import com.example.contadorlive.PartidoDB.PartidoViewModel
+import com.example.contadorlive.R
 import kotlinx.android.synthetic.main.activity_guardados.view.*
 
 class PartidosFragment : Fragment() {
@@ -41,7 +39,9 @@ class PartidosFragment : Fragment() {
 
     fun initRecyclerView(orientation: Int, container: View) {
         val linearLayoutManager = LinearLayoutManager(this.context)
-        Radapter = AdapterPartido(ArrayList(), { partido: PartidoEntity -> click?.partidoItemClicked(partido) })
+        Radapter = AdapterPartido(
+            ArrayList(),
+            { partido: PartidoEntity -> click?.partidoItemClicked(partido) })
 
         container.rv_list_partidos.adapter = Radapter
         if (flag) {

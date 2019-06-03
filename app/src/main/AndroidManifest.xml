@@ -9,13 +9,13 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".PartidosFragment">
+        <activity android:name=".Fragments.PartidosFragment">
         </activity>
-        <activity android:name=".PartidoActivity">
+        <activity android:name=".Activities.PartidoActivity">
         </activity>
-        <activity android:name=".NewPartidoActivity">
+        <activity android:name=".Activities.NewPartidoActivity">
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

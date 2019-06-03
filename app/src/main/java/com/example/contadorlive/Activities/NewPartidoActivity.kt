@@ -1,8 +1,7 @@
-package com.example.contadorlive
+package com.example.contadorlive.Activities
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
@@ -12,9 +11,11 @@ import androidx.databinding.DataBindingUtil
 
 import androidx.lifecycle.ViewModelProviders
 import com.example.contadorlive.PartidoDB.PartidoEntity
+import com.example.contadorlive.PartidoDB.PartidoViewModel
+import com.example.contadorlive.R
+import com.example.contadorlive.ScoreViewModel
 import com.example.contadorlive.databinding.ActivityNewPartidoBinding
 import kotlinx.android.synthetic.main.activity_new_partido.*
-import kotlinx.android.synthetic.main.activity_partido.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -48,7 +49,7 @@ class NewPartidoActivity : AppCompatActivity() {
                 selectedDate.set(Calendar.DAY_OF_MONTH,dayOfMonth)
                 val date = formate.format(selectedDate.time)
                 Toast.makeText(this,"date : " + date,Toast.LENGTH_SHORT).show()
-                tv_fecha.text = formate.format(selectedDate.time)
+                et_fecha.text = formate.format(selectedDate.time)
             },
                 now.get(Calendar.YEAR),now.get(Calendar.MONTH),now.get(Calendar.DAY_OF_MONTH))
             datePicker.show()
@@ -57,14 +58,14 @@ class NewPartidoActivity : AppCompatActivity() {
 
         bt_hora.setOnClickListener {
             val now = Calendar.getInstance()
-            val timePicker = TimePickerDialog(this, TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
+            val timePicker = TimePickerDialog(this, TimePickerDialog.OnTimeSetListener { _, hourOfDay, minute ->
                 val selectedTime = Calendar.getInstance()
                 selectedTime.set(Calendar.HOUR_OF_DAY,hourOfDay)
                 selectedTime.set(Calendar.MINUTE,minute)
                 // btn_show.text = timeFormat.format(selectedTime.time)
                 //val time = timeFormat.format(selectedTime.time)
                 Toast.makeText(this,"time : " + timeFormat.format(selectedTime.time),Toast.LENGTH_SHORT).show()
-                tv_hora.text = timeFormat.format(selectedTime.time)
+                et_hora.text = timeFormat.format(selectedTime.time)
             },
                 now.get(Calendar.HOUR_OF_DAY),now.get(Calendar.MINUTE),false)
             timePicker.show()

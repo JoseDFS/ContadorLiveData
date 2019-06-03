@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".PartidoActivity">
+        >
 
     <TextView
             android:text="TextView"
@@ -46,13 +46,14 @@
             app:layout_constraintStart_toEndOf="@+id/tv_teamB" android:layout_marginStart="68dp"
             android:layout_marginLeft="68dp"/>
     <TextView
-            android:text="El ganador es :"
+            android:text="Ganador :"
             android:layout_width="264dp"
             android:layout_height="111dp"
             android:id="@+id/tv_winner" android:textSize="30sp"
             android:layout_marginTop="24dp" app:layout_constraintTop_toBottomOf="@+id/tv_teamB"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.497" android:background="@color/orange" android:gravity="center"/>
+            app:layout_constraintHorizontal_bias="0.497" android:background="@color/orange" android:gravity="center"
+            style="@style/Widget.AppCompat.TextView.SpinnerItem"/>
     <TextView
             android:text="Fecha: "
             android:layout_width="305dp"
