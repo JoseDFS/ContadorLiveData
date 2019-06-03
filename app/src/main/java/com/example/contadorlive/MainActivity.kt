@@ -46,7 +46,9 @@ class MainActivity : AppCompatActivity(), OnFragmentInteractionListener {
         extras.putString("B", item.equipo_b)
         extras.putString("FECHA", item.fecha)
         extras.putString("PuntosA", item.puntosA.toString())
-        extras.putString("PuntosA", item.puntosA.toString())
+        extras.putString("PuntosB", item.puntosB.toString())
+        extras.putString("GANADOR", item.ganador.toString())
+        extras.putString("HORA", item.hora.toString())
 
         startActivity(Intent(this, PartidoActivity::class.java).putExtras(extras))
     }

@@ -45,7 +45,7 @@ class PartidosFragment : Fragment() {
 
         container.rv_list_partidos.adapter = Radapter
         if (flag) {
-            viewModel.getAllPartidos().observe(this, Observer { boooks ->
+            viewModel.allPartidos.observe(this, Observer { boooks ->
                 boooks?.let { Radapter.updateList(it) }
                 Log.d("Actualizando","Actualizando")
             })
@@ -98,40 +98,4 @@ class PartidosFragment : Fragment() {
         }
     }
 }
-/*
 
-private fun bind(){
-    Radapter= AdapterPartido(ArrayList(),{partido: PartidoEntity -> partidoItemClicked(partido) })
-    viewModel= ViewModelProviders.of(this).get(PartidoViewModel::class.java)
-    rv_list_partidos.apply {
-        adapter=this@PartidosFragment.Radapter
-        layoutManager= LinearLayoutManager(this@PartidosFragment)
-    }
-    Log.d("En Bind","Holis")
-    viewModel.getAllPartidos().observe(this, Observer {
-        Radapter.updateList(it)
-    })
-    /*btn_repo.setOnClickListener {
-        viewModel.retrieveRepo(et_repo.text.toString())
-    }*/
-}
-
-private fun partidoItemClicked(item: PartidoEntity) {
-    /*if (twoPane) {
-        mainContentFragment = MainContentFragment.newInstance(item)
-        supportFragmentManager.beginTransaction().replace(R.id.fragment_content, mainContentFragment).commit()
-    } else {*/
-        val extras = Bundle()
-        extras.putString("A", item.equipo_a)
-        extras.putString("B", item.equipo_b)
-        extras.putString("FECHA", item.fecha)
-        extras.putString("PuntosA", item.puntosA.toString())
-        extras.putString("PuntosA", item.puntosA.toString())
-
-        startActivity(Intent(this, PartidoActivity::class.java).putExtras(extras))
-    //}
-
-
-}
-}
-*/

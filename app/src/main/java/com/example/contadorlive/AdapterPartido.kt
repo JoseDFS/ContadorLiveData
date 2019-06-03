@@ -36,7 +36,7 @@ class AdapterPartido(var partidos:List<PartidoEntity>,val clickListener: (Partid
         fun bind(item: PartidoEntity,clickListener: (PartidoEntity) -> Unit) = with(itemView) {
             this.tv_teams_vs.text = item.equipo_a + " vs " + item.equipo_b
             this.tv_fecha.text = item.fecha
-            this.tv_id_partido.text = item.id.toString()
+            this.tv_id_partido.text = "Winner: " + item.ganador
             this.setOnClickListener{clickListener(item)}
 
         }

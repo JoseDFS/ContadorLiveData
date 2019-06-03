@@ -7,7 +7,7 @@ import com.example.contadorlive.PartidoDB.PartidoEntity
 
 class PartidoRepository(private var partidoDAO: PartidoDAO) {
 
-    fun allPartidos(): LiveData<List<PartidoEntity>> = partidoDAO.getPartidos()
+    val allPartidos: LiveData<List<PartidoEntity>> = partidoDAO.getPartidos()
 
     fun getCount():Int = partidoDAO.getCount()
     @WorkerThread

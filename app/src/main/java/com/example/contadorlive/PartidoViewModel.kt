@@ -7,29 +7,29 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.example.contadorlive.PartidoDB.PartidoEntity
 import com.example.contadorlive.PartidoDB.PartidoRoomDB
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class PartidoViewModel(private val app: Application) : AndroidViewModel(app) {
 
     private val repository: PartidoRepository
-
+    val allPartidos: LiveData<List<PartidoEntity>>
 
     init {
         val partidoDAO = PartidoRoomDB.getDatabase(app).partidoDao()
         repository = PartidoRepository(partidoDAO)
-
+        allPartidos =repository.allPartidos
     }
 
     /**
      * Launching a new coroutine to insert the data in a non-blocking way
      */
-    suspend fun insert(partidoEntity: PartidoEntity) {repository.insert(partidoEntity)
-    Log.d("Insertado",partidoEntity.toString())}
-    fun getAllPartidos():LiveData<List<PartidoEntity>> {
-        Log.d("Obtenidos","Holas")
-        return repository.allPartidos()
+    fun insert(partidoEntity: PartidoEntity) = viewModelScope.launch(Dispatchers.IO) {
+        Log.d("Insertado",partidoEntity.toString())
+        repository.insert(partidoEntity)
 
     }
+
     /*suspend fun getByfecha(fecha:String):LiveData<List<PartidoEntity>>{
         return repository.getByFecha(fecha)
     }*/
