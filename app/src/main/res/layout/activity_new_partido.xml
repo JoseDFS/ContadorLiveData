@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.contadorlive.NewPartidoActivity">
+
+    <data>
+
+        <variable
+            name="score"
+            type="com.example.contadorlive.ScoreViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".MainActivity">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/small_gap">
+
+                <LinearLayout
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/medium_gap"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/et_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:hint="Escribe el nombre del primer equipo"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="162dp"
+                        android:scaleX="-1"
+                        android:src="@drawable/basketball" />
+
+                    <TextView
+                        android:id="@+id/tv_score_team_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small_gap"
+                        android:gravity="center"
+                        android:text="@{score.scoreTeamA}"
+                        android:textSize="@dimen/big_text" />
+
+
+                    <Button
+                        android:id="@+id/bt_team_a_3_p"
+                        style="@android:style/Widget.Holo.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small_gap"
+                        android:background="@color/orange"
+                        android:onClick="@{() ->score.addThreeTeamA()}"
+                        android:text="@string/action_3_points" />
+
+                    <Button
+                        android:id="@+id/bt_team_a_2_p"
+                        style="@android:style/Widget.Holo.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small_gap"
+                        android:background="@color/orange"
+                        android:onClick="@{() ->score.addTwoTeamA()}"
+                        android:text="@string/action_2_points" />
+
+                    <Button
+                        android:id="@+id/bt_team_a_free_throw"
+                        style="@android:style/Widget.Holo.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small_gap"
+                        android:background="@color/orange"
+                        android:onClick="@{() ->score.addOneTeamA()}"
+                        android:text="@string/action_free_throw" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/medium_gap"
+                    android:layout_marginTop="@dimen/medium_gap"
+                    android:layout_marginRight="@dimen/medium_gap"
+                    android:background="#D8D4D4" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="@dimen/medium_gap"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/et_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:hint="Escribe el nombre del segundo equipo"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="162dp"
+                        android:src="@drawable/basketball" />
+
+                    <TextView
+                        android:id="@+id/tv_score_team_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small_gap"
+                        android:gravity="center"
+                        android:text="@{score.scoreTeamB}"
+                        android:textSize="@dimen/big_text" />
+
+                    <Button
+                        android:id="@+id/bt_team_b_3_p"
+                        style="@android:style/Widget.Holo.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small_gap"
+                        android:background="@color/orange"
+                        android:onClick="@{() ->score.addThreeTeamB()}"
+                        android:text="@string/action_3_points" />
+
+                    <Button
+                        android:id="@+id/bt_team_b_2_p"
+                        style="@android:style/Widget.Holo.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small_gap"
+                        android:background="@color/orange"
+                        android:onClick="@{() ->score.addTwoTeamB()}"
+                        android:text="@string/action_2_points" />
+
+                    <Button
+                        android:id="@+id/bt_team_b_free_throw"
+                        style="@android:style/Widget.Holo.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small_gap"
+                        android:background="@color/orange"
+                        android:onClick="@{() ->score.addOneTeamB()}"
+                        android:text="@string/action_free_throw" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/et_fecha"
+                android:layout_width="match_parent"
+                android:layout_height="57dp"
+                android:hint="Fecha del partido"
+                android:textSize="25sp"
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bt_reset"
+                    style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+                    android:layout_width="138dp"
+                    android:layout_height="53dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/medium_gap"
+                    android:layout_marginBottom="@dimen/medium_gap"
+                    android:layout_weight="1"
+                    android:background="#FDD835"
+                    android:onClick="@{() -> score.resetScores()}"
+                    android:text="@string/action_reset"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/bt_guardar"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="138dp"
+                    android:layout_height="53dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/medium_gap"
+                    android:layout_marginBottom="@dimen/medium_gap"
+                    android:layout_weight="1"
+                    android:background="#FDD835"
+                    android:text="Guardar Partido"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>
