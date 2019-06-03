@@ -26,14 +26,13 @@ android {
     dataBinding {
         enabled = true
     }
-    kapt {
-        generateStubs = true
-    }
+
     packagingOptions {
         pickFirst 'META-INF/kotlinx-io.kotlin_module'
         pickFirst 'META-INF/atomicfu.kotlin_module'
         pickFirst 'META-INF/kotlinx-coroutines-io.kotlin_module'
     }
+
 }
 
 dependencies {
@@ -46,6 +45,7 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+
     kapt "com.android.databinding:compiler:$kotlin_version"
     // Dependencies for working with Architecture components
 
@@ -72,5 +72,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
     implementation 'com.google.android.material:material:1.1.0-alpha07'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
+
 
 }
